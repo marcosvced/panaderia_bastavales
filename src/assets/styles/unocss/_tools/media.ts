@@ -1,4 +1,4 @@
-import {type Breakpoint,} from "../_settings/breakpoints.ts";
+import {type Breakpoint,} from "../_settings/breakpoints";
 
 export const mediaQuery = (matcher: string, {theme: {breakpoints}}: {
     theme: { breakpoints: Record<Breakpoint, string> }

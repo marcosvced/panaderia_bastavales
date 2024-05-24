@@ -1,6 +1,6 @@
 import type {CSSEntries} from "unocss";
-import {spacing} from "../_settings/spacing.ts";
-import {pixels} from "./pixels.ts";
+import {spacing} from "../_settings/spacing";
+import {pixels} from "./pixels";
 
 
 /**

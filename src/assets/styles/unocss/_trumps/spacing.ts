@@ -1,6 +1,6 @@
-import {directionSize} from "../_tools/direction.ts"
-import {minus} from "../_settings/utils.ts";
-import {spacing} from "../_settings/spacing.ts";
+import {directionSize} from "../_tools/direction"
+import {minus} from "../_settings/utils";
+import {spacing} from "../_settings/spacing";
 
 
 export const margins = [

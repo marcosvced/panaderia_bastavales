@@ -1,5 +1,5 @@
-import {pixels} from "../_tools/pixels.ts";
-import {spacing} from "../_settings/spacing.ts";
+import {pixels} from "../_tools/pixels";
+import {spacing} from "../_settings/spacing";
 
 export const grid = [
     [

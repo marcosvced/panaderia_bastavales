@@ -1,10 +1,10 @@
 import {definePreset} from 'unocss'
-import {colors} from "./_settings/palette.ts";
-import {breakpoints} from "./_settings/breakpoints.ts";
-import {mediaQuery} from "./_tools/media.ts";
-import {margins, paddings} from "./_trumps/spacing.ts";
-import {width, height} from "./_trumps/size.ts";
-import {grid} from "./_trumps/grid.ts";
+import {colors} from "./_settings/palette";
+import {breakpoints} from "./_settings/breakpoints";
+import {mediaQuery} from "./_tools/media";
+import {margins, paddings} from "./_trumps/spacing";
+import {width, height} from "./_trumps/size";
+import {grid} from "./_trumps/grid";
 
 
 export default definePreset(() => {

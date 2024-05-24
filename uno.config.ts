@@ -4,7 +4,7 @@ import {type ConfigBase, defineConfig} from 'unocss'
 import transformerDirectives from '@unocss/transformer-directives'
 import presetIcons from '@unocss/preset-icons'
 
-import aguiaDesign from './src/assets/styles/unocss/index.ts'
+import aguiaDesign from './src/assets/styles/unocss/index'
 
 
 export default defineConfig({

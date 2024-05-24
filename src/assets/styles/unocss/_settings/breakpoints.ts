@@ -1,4 +1,4 @@
-import {pixels} from "../_tools/pixels.ts";
+import {pixels} from "../_tools/pixels";
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
 

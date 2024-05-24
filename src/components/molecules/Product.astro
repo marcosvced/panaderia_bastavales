@@ -1,9 +1,9 @@
 ---
-import {Image} from 'astro:assets'
+import { Image } from 'astro:assets'
 
-export type ProductType = { img: Image, price: string, title: string, description: string }
+// export type ProductType = { img: any, price: string, title: string, description: string }
 interface Props {
-    product: ProductType
+    product: any
 }
 
 const {product: {img, title, price, description}} = Astro.props;
@@ -13,7 +13,7 @@ const {product: {img, title, price, description}} = Astro.props;
     <Image
             src={img}
             alt="A bird sitting on a nest of eggs."
-            formats={['webp']}
+            format={'webp'}
             decoding="async"
             loading="lazy"
             class='about__img'

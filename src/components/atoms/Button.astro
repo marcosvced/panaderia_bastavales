@@ -1,7 +1,7 @@
 ---
 interface Props {
     text: string;
-    href: string;
+    href?: string;
 }
 
 const {href, text} = Astro.props;
@@ -21,6 +21,7 @@ const {href, text} = Astro.props;
         padding-inline: 32px;
         padding-block: 16px;
         cursor: pointer;
+        color: theme('colors.light');
     }
 
     button:before {
