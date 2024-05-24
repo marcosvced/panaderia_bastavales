@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from "../components/organism/Hero.astro";
+import About from "../components/organism/About.astro";
+import Products from "../components/organism/Products.astro";
+import Oven from "../components/organism/Oven.astro";
+---
+
+<Layout title="Panadería Bastavales - Pan artesan dende 1820">
+    <main>
+        <Hero/>
+        <About/>
+        <Products/>
+        <Oven/>
+        <p>.</p>
+    </main>
+</Layout>
+
+<style>
+    main > :global(*:not(:last-child)) {
+        @apply -m-b(55);
+    }
+</style>

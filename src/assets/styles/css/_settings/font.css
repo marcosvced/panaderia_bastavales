@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+@font-face {
+    font-family: 'New York';
+    src: url('/fonts/NewYork/NewYork-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/**
+* @license
+*
+* Font Family: Gambarino
+* Designed by: Théo Guillard
+* URL: https://www.fontshare.com/fonts/gambarino
+* © 2024 Indian Type Foundry
+*
+* Gambarino Regular
+
+*
+*/
+@font-face {
+    font-family: 'Gambarino-Regular';
+    src: url('/fonts/Gambarino-Regular.woff2') format('woff2'),
+    url('/fonts/Gambarino-Regular.woff') format('woff'),
+    url('/fonts/Gambarino-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}

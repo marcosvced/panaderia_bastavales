@@ -1,0 +1,103 @@
+---
+import Slider from "../molecules/Slider.astro";
+
+import molete from '@assets/img/molete.png'
+import empanada from '@assets/img/empanada.png'
+import bola from '@assets/img/bola.png'
+import barra from '@assets/img/barra.png'
+import Product from "../molecules/Product.astro";
+
+
+
+const products: ProductType[] = [
+    {
+        img: molete,
+        price: '2,70',
+        title: 'O noso molete',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
+    },
+    {
+        img: empanada,
+        price: '14,20',
+        title: 'Empanada de carner',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
+    },
+    {
+        img: barra,
+        price: '1,25',
+        title: 'Barra tradicional',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
+    },
+    {
+        img: bola,
+        price: '2,50',
+        title: 'A nosa bola',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
+    },
+]
+
+---
+<section class="o-products -grid -columns(24) ">
+    <!-- Slider main container -->
+    <div class=" -column-start(3) -column-end(23)">
+        <h2  class="-m-t(0) -m-b(8)">Tradición e sabor</h2>
+        <p class="-m-t(0) -m-b(16)">Productos artesans elavorados co mellor da nosa terra.</p>
+        <Slider >
+            {products.map((product) => (
+                    <div class="swiper-slide">
+                        <Product product={product} />
+                    </div>
+            ))}
+
+            {products.map((product) => (
+                    <div class="swiper-slide">
+                        <Product product={product} />
+                    </div>
+            ))}
+
+            {products.map((product) => (
+                    <div class="swiper-slide">
+                        <Product product={product} />
+                    </div>
+            ))}
+        </Slider>
+    </div>
+</section>
+<style>
+    h2 {
+        font-size: 64px;
+        font-family: 'New York';
+        font-weight: normal;
+    }
+
+    p {
+        font-family: Inter;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 200;
+        opacity: .65;
+    }
+
+    .o-products :global(.info) {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .o-products :global(h3) {
+        font-family: 'New York';
+        font-size: 24px;
+        font-weight: normal;
+        margin: 0 0 8px;
+    }
+
+    .o-products :global(h3 + p) {
+        font-family: Inter;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 200;
+        opacity: .65;
+        margin: 0;
+    }
+</style>

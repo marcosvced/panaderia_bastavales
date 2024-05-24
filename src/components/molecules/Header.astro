@@ -1,0 +1,41 @@
+---
+
+---
+<header>
+    <div class="logo">
+        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21 0H0V21C0 32.598 9.40202 42 21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0ZM21 12.0909H12.0909V21C12.0909 25.9204 16.0796 29.9091 21 29.9091C25.9204 29.9091 29.9091 25.9204 29.9091 21C29.9091 16.0796 25.9204 12.0909 21 12.0909Z"
+                  fill="#C39D6D"/>
+        </svg>
+    </div>
+</header>
+
+<style>
+
+    header {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 900;
+
+        @apply
+        -height(64)
+        -screen(sm):height(86)
+        -screen(xl):height(145)
+        -p-inline(4)
+        -screen(xs):p-inline(6)
+        -screen(md):p-inline(8)
+        -screen(lg):p-inline(10)
+        -screen(xxl):p-inline(18);
+    }
+
+    .logo {
+        @apply
+        -width(42)
+        -height(42)
+        -m-y(auto);
+    }
+</style>
+

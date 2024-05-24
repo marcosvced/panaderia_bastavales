@@ -1,0 +1,93 @@
+---
+import {Image} from 'astro:assets'
+import Button from "../atoms/Button.astro";
+import img1 from '@assets/img/img1.png'
+import img2 from '@assets/img/img2.png'
+import img3 from '@assets/img/img3.png'
+---
+<section class="o-about grid">
+    <div class="container__description">
+        <h2 class="-m-t(0) -m-b(8)">
+            O segredo <br/>dun sabor único
+        </h2>
+        <p class="-m-t(0) -m-b(4)">
+            O noso pan non é só un produto,e o resultado dunha traxectoria de séculos, onde cada bocado conta a historia
+            da nosa paixón polo sabor auténtico.
+            <br/>
+            Elaborado con dedicación en noso <b>forno de leña</b>, utilizando os mellores ingredientes, seleccionados
+            coidadosamente para garantir un sabor único e irresistible.
+        </p>
+        <p class="-m-t(0) -m-b(8)">
+            As nosas empanadas son unha verdadeira delicia, feitas con receitas familiares e ingredientes frescos. Cada
+            bocado é unha experiencia gastronómica, que evoca os sabores das festas de antano.
+        </p>
+
+        <Button text="Os nosos productos" />
+    </div>
+
+    <div class="container__pictures">
+        <Image src={img1}
+               alt="A bird sitting on a nest of eggs."
+               formats={['webp']}
+               decoding="async"
+               loading="lazy"
+               class='about__img -column-start(1) -column-end(3)'
+        />
+        <Image src={img2}
+               alt="A bird sitting on a nest of eggs."
+               formats={['webp']}
+               decoding="async"
+               loading="lazy"
+               class='about__img -column-start(1) -column-end(3)'
+        />
+        <Image src={img3}
+               alt="A bird sitting on a nest of eggs."
+               formats={['webp']}
+               decoding="async"
+               loading="lazy"
+               class='about__img -column-start(3) -column-end(5) -row-start(1) -row-span(2)'
+        />
+    </div>
+
+</section>
+<style>
+    .o-about {
+        align-items: center;
+    }
+    .container__description {
+        @apply
+        -column-start(3)
+        -column-end(12);
+    }
+
+    h2 {
+        font-size: 64px;
+        font-family: 'New York';
+        font-weight: normal;
+    }
+
+    p {
+        font-family: Inter;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 200;
+        opacity: .65;
+
+    }
+
+    .container__pictures {
+        @apply
+        -column-start(13)
+        -column-end(23)
+        -grid
+        -columns(4)
+        -gap(8);
+    }
+
+    .about__img  {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+</style>

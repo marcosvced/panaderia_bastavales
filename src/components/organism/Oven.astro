@@ -1,0 +1,157 @@
+---
+import {Image} from 'astro:assets'
+import Slider from "../molecules/Slider.astro";
+import oven1 from '@assets/img/oven1.png'
+import oven2 from '@assets/img/oven2.png'
+import oven3 from '@assets/img/oven3.png'
+---
+
+<script>
+    import Swiper from 'swiper';
+    import {Navigation, Pagination} from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+
+    // init Swiper:
+    new Swiper('.oven-swiper', {
+        // configure Swiper to use modules
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        pagination: {
+            el: ".oven-swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+<section class="o-oven -grid -columns(24)">
+    <h2 class="-m-t(0) -m-b(8)">
+        Pan artesan en forno de leña
+    </h2>
+    <p class="-m-t(0) -m-b(8)">
+        Na nosa panadería, fundada en 1820, seguimos honrando a tradición e a arte de facer pan como o facían os
+        nosos antepasados. Cada peza de pan é elaborada a man e cocida no noso forno de leña, conferíndolle ese
+        sabor inigualable e auténtico que só pode lograrse co método tradicional.
+    </p>
+    <p class="-m-t(0) -m-b(8)">
+        A maxia do noso forno de leña reside na súa capacidade para acadar temperaturas elevadas e constantes,
+        permitindo que cada pan obteña unha codia crocante e un interior suave e esponxoso. Este proceso non só preserva
+        as calidades gustativas do pan, senón que tamén mantén todas as substancias nutritivas esenciais.
+    </p>
+    <div class="-column-start(3) -column-end(23)">
+        <div class="oven-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <Image
+                            src={oven1}
+                            alt="A bird sitting on a nest of eggs."
+                            formats={['webp']}
+                            decoding="async"
+                            loading="lazy"
+                            class='about__img'
+                    />
+                </div>
+                <div class="swiper-slide">
+                    <Image
+                            src={oven2}
+                            alt="A bird sitting on a nest of eggs."
+                            formats={['webp']}
+                            decoding="async"
+                            loading="lazy"
+                            class='about__img'
+                    />
+                </div>
+                <div class="swiper-slide">
+                    <Image
+                            src={oven3}
+                            alt="A bird sitting on a nest of eggs."
+                            formats={['webp']}
+                            decoding="async"
+                            loading="lazy"
+                            class='about__img'
+                    />
+                </div>
+            </div>
+            <div class="oven-swiper-pagination"></div>
+        </div>
+
+    </div>
+
+
+</section>
+<style>
+    h2 {
+        @apply
+        -column-start(3)
+        -column-end(23);
+
+        font-size: 64px;
+        font-family: 'New York';
+        font-weight: normal;
+    }
+
+    .o-over :global(img) {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        user-select: none;
+        margin-bottom: 24px;
+    }
+
+    p:first-of-type {
+        @apply
+        -column-start(3)
+        -column-end(12);
+    }
+
+    p:last-of-type {
+        @apply
+        -column-start(13)
+        -column-end(23);
+    }
+
+    p {
+        font-family: Inter;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 200;
+        opacity: .65;
+    }
+
+    .oven-swiper {
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        max-height: 696px;
+        object-fit: cover;
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        user-select: none;
+        margin-bottom: 24px;
+    }
+
+    .oven-swiper-pagination.swiper-pagination-bullets {
+        bottom: 0;
+        left: 0;
+        position: static;
+        width: auto;
+        flex-grow: 1;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .oven-swiper-pagination.swiper-pagination-bullets :global(.swiper-pagination-bullet) {
+        background-color: theme('colors.light');
+        width: 5%;
+        border-radius: 0;
+        height: 2px;
+        margin: 0 !important;
+    }
+</style>

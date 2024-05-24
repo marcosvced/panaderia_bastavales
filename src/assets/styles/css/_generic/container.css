@@ -1,0 +1,16 @@
+.container {
+    @apply
+    -m-x(auto)
+    -p-x(4)
+    -screen(xs):p-x(6)
+    -screen(md):p-x(8)
+    -screen(lg):p-x(10)
+    -screen(xxl):p-x(18);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: 1rem
+}
+

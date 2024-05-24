@@ -1,0 +1,121 @@
+---
+---
+<script>
+    import Swiper from 'swiper';
+    import {Navigation, Pagination} from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+
+    // init Swiper:
+    new Swiper('.swiper', {
+        // configure Swiper to use modules
+        modules: [Navigation, Pagination],
+        slidesPerView: 6,
+        spaceBetween: 24,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <slot/>
+    </div>
+
+    <div class="wrapper">
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="navigation-group">
+            <div class="swiper-button-prev navigation__button">
+                <i class="i-custom:arrow-left icon"/>
+            </div>
+            <div class="swiper-button-next navigation__button">
+                <i class="i-custom:arrow-right icon"/>
+            </div>
+        </div>
+    </div>
+    <!-- If we need scrollbar -->
+    <!--<div class="swiper-scrollbar"></div>-->
+</div>
+
+<style>
+
+    .swiper {
+        overflow: visible;
+    }
+
+    section > .swiper .swiper-wrapper {
+        align-items: stretch;
+    }
+
+    .swiper .swiper-wrapper .swiper-slide {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .wrapper {
+        display: flex;
+        margin-top: 24px;
+        gap: 48px;
+    }
+
+    .swiper-pagination.swiper-pagination-bullets {
+        bottom: 0;
+        left: 0;
+        position: static;
+        width: auto;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        position: static;
+    }
+
+    .navigation-group {
+        display: flex;
+        gap: 16px;
+        height: 48px;
+    }
+
+    .navigation-group > * {
+        height: 48px;
+        width: 48px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        color: white;
+        margin: 0;
+    }
+
+    .navigation-group > *:after {
+        display: none;
+    }
+
+
+
+</style>
+
+<style is:global>
+    .swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+        background-color: theme('colors.light');
+        width: 100%;
+        border-radius: 0;
+        height: 2px;
+        margin: 0 !important;
+    }
+
+</style>
