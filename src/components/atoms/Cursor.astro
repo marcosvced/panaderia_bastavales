@@ -1,0 +1,48 @@
+---
+
+---
+<script>
+    const conf = {
+        size: 350,
+        delay: 100,
+    }
+
+    const cursorSize = `${conf.size}px`
+    let xPoint = conf.size * -1
+    let yPoint = conf.size * -1
+
+
+    window.addEventListener('mousemove', ($event: any) => {
+        setTimeout(() => {
+            xPoint = $event.clientX
+            yPoint = $event.clientY
+
+            document.querySelector('.a-beats-cursor').style.transform = `matrix(1, 0, 0, 1, ${xPoint - conf.size / 2}, ${yPoint - conf.size / 2})`
+        }, conf.delay)
+    })
+
+</script>
+
+<div class='a-beats-cursor'/>
+
+<style>
+
+    .a-beats-cursor {
+        top: 0;
+        left: 0;
+        position: fixed;
+        pointer-events: none;
+        user-select: none;
+        z-index: 9999;
+        backface-visibility: hidden;
+        will-change: transform;
+        mix-blend-mode: exclusion;
+        background: linear-gradient(142deg, #8f8f4e -2.42%, #9c7d57 74.18%);
+        filter: blur(100px);
+        opacity: .25;
+        height: 350px;
+        width: 350px;
+        border-radius: 50%;
+    }
+
+</style>
