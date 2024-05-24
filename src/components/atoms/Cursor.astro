@@ -7,17 +7,19 @@
         delay: 100,
     }
 
-    const cursorSize = `${conf.size}px`
     let xPoint = conf.size * -1
     let yPoint = conf.size * -1
 
 
     window.addEventListener('mousemove', ($event: any) => {
         setTimeout(() => {
-            xPoint = $event.clientX
-            yPoint = $event.clientY
+            xPoint = $event.clientX as number
+            yPoint = $event.clientY as number
 
-            document.querySelector('.a-beats-cursor').style.transform = `matrix(1, 0, 0, 1, ${xPoint - conf.size / 2}, ${yPoint - conf.size / 2})`
+            const cursor = document.querySelector('.a-beats-cursor') as HTMLElement
+
+            if (cursor)
+                cursor.style.transform = `matrix(1, 0, 0, 1, ${xPoint - conf.size / 2}, ${yPoint - conf.size / 2})`
         }, conf.delay)
     })
 
