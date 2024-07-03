@@ -1,0 +1,86 @@
+---
+import {Image} from 'astro:assets'
+import img1 from '@assets/img/contact.png'
+---
+<section class="o-contact grid -columns(24)" id="contacto">
+    <h2 class="-m-t(0) -m-b(8)">
+        Ponte en contacto con nos
+    </h2>
+    <div class="container__wrapper grid -columns(24)">
+        <Image src={img1}
+               alt="A bird sitting on a nest of eggs."
+               format={'webp'}
+               decoding="async"
+               loading="lazy"
+               class='about__img -column-start(1) -column-span(8) -width(100%)'
+        />
+        <div class="contact -m-b(20) -column-start(10) -column-span(15)">
+            <div class="contact__address-phone -m-b(20)">
+                <h3 class="contact__title -m-t(0) -m-b(4)">
+                    Localizanos en:
+                </h3>
+                <p class="-m-b(12)">Aldea Sabaxáns, 41, 15280 Sabaxans, A Coruña</p>
+
+                <h3 class="contact__title -m-t(0) -m-b(4)">
+                    Deixanos unha mensaxe ou chámenenos a:
+                </h3>
+                <p>622 - 02 - 44 - 33</p>
+            </div>
+
+
+            <div class="contact__opening-hours">
+                <h3 class="opening-hours__title -m-t(0) -m-b(4)">Horario</h3>
+                <p class="-m-y(0)">Luns - Venres: <strong>09:30 - 15:00</strong></p>
+                <p class="-m-y(0)">Sábado - Domingo: <strong>09:30 - 15:30</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    h2 {
+        @apply
+        -column-start(3)
+        -column-end(23);
+        font-family: var(--ff-title), sans-serif;
+        font-size: 64px;
+        font-weight: normal;
+    }
+
+    .container__wrapper {
+        @apply
+        -column-start(3)
+        -column-end(23);
+        align-items: center;
+    }
+
+    .container__wrapper :global(img) {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 0;
+        user-select: none;
+    }
+
+    h3 {
+        font-family: var(--ff-body), serif;
+        font-weight: normal;
+        color: theme('colors.primary');
+    }
+
+    p {
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+        border-bottom-color: theme('colors.opacity-400');
+        border-top-width: 1px;
+        border-top-style: dashed;
+        border-top-color: theme('colors.opacity-400');
+        display: block;
+        font-family: var(--ff-body), serif;
+        font-size: 1.15rem;
+        @apply -p-y(4);
+    }
+
+    .contact__opening-hours > p:last-of-type {
+        border-top: 0;
+    }
+</style>

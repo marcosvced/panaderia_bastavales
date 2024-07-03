@@ -1,36 +1,38 @@
 ---
-
+const features: { highlight: string, title: string, description: string }[] = [
+    {
+        highlight: '100%',
+        title: 'natural',
+        description: 'So usamos ingredientes naturais, sen lévedos industriais nen aditivos artificiais.'
+    },
+    {
+        highlight:'Grao',
+        title:'integral',
+        description:'O grao integral otorga un sabor inconfundible e un aroma ó auténtico pan tradicional.'
+    },
+    {
+        highlight:'Sabor',
+        title:'inconfundible',
+        description:'O noso pan posee un sabor inconfundible, gracias os ingredientes e elavoración artesan.'
+    },
+    {
+        highlight:'Conservación',
+        title:'prolongada',
+        description:'Grazas a estar elavorado con masa nai, o noso pan mantense fresco por varios días.'
+    }
+]
 ---
 <section class="o-features -grid -columns(24)" id="calidades">
     <div class="features__container -column-start(4) -column-end(22) -gap(24)">
-        <div class="feature">
-            <h2>
-                <span>100%</span>
-                natural
-            </h2>
-            <p>So usamos ingredientes naturais, sen lévedos industriais nen aditivos artificiais.</p>
-        </div>
-        <div class="feature">
-            <h2>
-                <span>Grao</span>
-                integral
-            </h2>
-            <p>O grao integral otorga un sabor inconfundible e un aroma ó auténtico pan tradicional.</p>
-        </div>
-        <div class="feature">
-            <h2>
-                <span>Sabor</span>
-                inconfundible
-            </h2>
-            <p>O noso pan posee un sabor inconfundible, gracias os ingredientes e elavoración artesan.</p>
-        </div>
-        <div class="feature">
-            <h2>
-                <span>Conservación</span>
-                prolongada
-            </h2>
-            <p>Grazas a estar elavorado con masa nai, o noso pan mantense fresco por varios días.</p>
-        </div>
+        {features.map(({highlight,title,description})=>(
+                <div class="feature">
+                    <h2>
+                        <span>{highlight}</span>
+                        {title}
+                    </h2>
+                    <p>{description}</p>
+                </div>
+        ))}
     </div>
 </section>
 
@@ -42,8 +44,8 @@
     }
 
     h2 {
+        font-family: var(--ff-title), sans-serif;
         font-size: 32px;
-        font-family: 'New York';
         font-weight: normal;
         display: flex;
         flex-direction: column;
