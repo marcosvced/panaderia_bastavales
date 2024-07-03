@@ -13,6 +13,7 @@
         modules: [Navigation, Pagination],
         slidesPerView: 6,
         spaceBetween: 24,
+        speed: 500,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -105,6 +106,7 @@
         display: none;
     }
 
+    .swiper-wrapper { transition-timing-function: ease-in-out; }
 
 
 </style>

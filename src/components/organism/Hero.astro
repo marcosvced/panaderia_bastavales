@@ -1,7 +1,7 @@
 ---
 import {Picture} from 'astro:assets'
 import heroImage from '@assets/img/hero.png'
-import Button from "../atoms/Button.astro";
+import Button from '@/components/atoms/Button.vue'
 ---
 <section class="o-hero grid">
     <div class="claim">
@@ -13,12 +13,12 @@ import Button from "../atoms/Button.astro";
             Pan artesan en <b>forno de leña</b> dende <b>1820</b>.
         </h2>
 
-        <div class="claim__opening-hours -m-b(8)">
+        <div class="claim__opening-hours -m-b(20)">
             <h2 class="opening-hours__title -m-t(0) -m-b(4)">Horario</h2>
             <p>Luns - Venres: <strong>09:30 - 15:00</strong></p>
             <p>Sábado - Domingo: <strong>09:30 - 15:30</strong></p>
         </div>
-        <Button text="Contáctanos"/>
+        <Button text="Contáctanos" href="#features" client:only="vue"/>
     </div>
 
     <Picture

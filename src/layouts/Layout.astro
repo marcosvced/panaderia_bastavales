@@ -11,20 +11,39 @@ const {title} = Astro.props;
 <script>
     import Lenis from 'lenis'
 
-    const lenis = new Lenis({
+    window['lenis'] = new Lenis({
         lerp: 0.04
     })
 
-    lenis.on('scroll', (e) => {
-        console.log(e)
-    })
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && (!window.location.href.includes(entry.target.id) || '' === entry.target.id)) {
+                history.pushState(
+                    null,
+                    '',
+                    entry.target.id ? `${window.location.origin}#${entry.target.id}` : window.location.origin
+                )
+
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.25,
+        rootMargin: '0px'
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 
     function raf(time) {
-        lenis.raf(time)
+        window['lenis'].raf(time)
         requestAnimationFrame(raf)
     }
 
     requestAnimationFrame(raf)
+
 </script>
 
 <!doctype html>

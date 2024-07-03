@@ -1,11 +1,11 @@
 ---
 import {Image} from 'astro:assets'
-import Button from "../atoms/Button.astro";
+import Button from '@/components/atoms/Button.vue'
 import img1 from '@assets/img/img1.png'
 import img2 from '@assets/img/img2.png'
 import img3 from '@assets/img/img3.png'
 ---
-<section class="o-about grid">
+<section class="o-about grid" id="o-noso-segredo">
     <div class="container__description">
         <h2 class="-m-t(0) -m-b(8)">
             O segredo <br/>dun sabor único
@@ -22,7 +22,7 @@ import img3 from '@assets/img/img3.png'
             bocado é unha experiencia gastronómica, que evoca os sabores das festas de antano.
         </p>
 
-        <Button text="Os nosos productos" />
+        <Button href="#os-nosos-productos" text="Os nosos productos" client:only="vue"/>
     </div>
 
     <div class="container__pictures">
