@@ -568,6 +568,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@darkroom.engineering/tempus@npm:^0.0.46":
+  version: 0.0.46
+  resolution: "@darkroom.engineering/tempus@npm:0.0.46"
+  checksum: 10c0/20c48ff5b6a1a0dc1b9af253de3b06ac7d66c6ffefa86a0b2efe06f2a9a96135fd1e7b7ac72e8d347489564521e8ac7aa12e13cb60a1ffd0908cca78b764c584
+  languageName: node
+  linkType: hard
+
 "@edge-runtime/format@npm:2.2.1":
   version: 2.2.1
   resolution: "@edge-runtime/format@npm:2.2.1"
@@ -4896,6 +4903,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lenis@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "lenis@npm:1.1.5"
+  dependencies:
+    "@darkroom.engineering/tempus": "npm:^0.0.46"
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/9c223841b5749af0e644b947b22688133a793101104dd7503c57e0ad6f83023c7353f7f15ee51c65ab4d222b0e3a5ebf9a0c8a29de77fbc4b0593ff7921111ff
+  languageName: node
+  linkType: hard
+
 "load-yaml-file@npm:^0.2.0":
   version: 0.2.0
   resolution: "load-yaml-file@npm:0.2.0"
@@ -6142,6 +6166,7 @@ __metadata:
     "@unocss/preset-icons": "npm:^0.60.3"
     "@unocss/transformer-directives": "npm:^0.60.2"
     astro: "npm:^4.8.6"
+    lenis: "npm:^1.1.5"
     sharp: "npm:^0.33.4"
     swiper: "npm:^11.1.3"
     typescript: "npm:^5.4.5"
