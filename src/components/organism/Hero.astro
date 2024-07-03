@@ -13,6 +13,11 @@ import Button from "../atoms/Button.astro";
             Pan artesan en <b>forno de leña</b> dende <b>1820</b>.
         </h2>
 
+        <div class="claim__opening-hours -m-b(8)">
+            <h2 class="opening-hours__title -m-t(0) -m-b(4)">Horario</h2>
+            <p>Luns - Venres: <strong>09:30 - 15:00</strong></p>
+            <p>Sábado - Domingo: <strong>09:30 - 15:30</strong></p>
+        </div>
         <Button text="Contáctanos"/>
     </div>
 
@@ -34,7 +39,7 @@ import Button from "../atoms/Button.astro";
     }
 
     .o-hero:before {
-        content:"";
+        content: "";
         pointer-events: none;
         position: absolute;
         width: 100%;
@@ -53,16 +58,16 @@ import Button from "../atoms/Button.astro";
     }
 
 
-    .claim h1 {
+    h1 {
+        font-family: var(--ff-title), serif;
         font-size: clamp(40px, 5vw + 1rem, 104px);
-        font-family: 'New York';
         font-weight: 400;
     }
 
-    .claim h2 {
+    h2 {
+        font-family: var(--ff-body);
         font-size: clamp(16px, 2vw + 1rem, 24px);
         width: 90%;
-        font-family: Inter;
         font-weight: 200;
         line-height: 1.25;
     }
@@ -85,4 +90,28 @@ import Button from "../atoms/Button.astro";
         -width(100%)
         -height(100%);
     }
+
+    h2.opening-hours__title {
+        font-family: var(--ff-title), serif;
+        font-weight: normal;
+        color: theme('colors.primary');
+    }
+
+    .claim__opening-hours > p {
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+        border-bottom-color: theme('colors.opacity-400');
+        border-top-width: 1px;
+        border-top-style: dashed;
+        border-top-color: theme('colors.opacity-400');
+        display: block;
+        margin: 0;
+        font-family: var(--ff-body), serif;
+        @apply -p-y(3);
+    }
+
+    .claim__opening-hours > p:last-of-type {
+        border-top: 0;
+    }
+
 </style>

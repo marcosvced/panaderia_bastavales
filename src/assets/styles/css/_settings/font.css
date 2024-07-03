@@ -9,26 +9,48 @@
     font-display: swap;
 }
 
-
-
-/**
-* @license
-*
-* Font Family: Gambarino
-* Designed by: Théo Guillard
-* URL: https://www.fontshare.com/fonts/gambarino
-* © 2024 Indian Type Foundry
-*
-* Gambarino Regular
-
-*
-*/
 @font-face {
-    font-family: 'Gambarino-Regular';
-    src: url('/fonts/Gambarino-Regular.woff2') format('woff2'),
-    url('/fonts/Gambarino-Regular.woff') format('woff'),
-    url('/fonts/Gambarino-Regular.ttf') format('truetype');
+    font-family: 'Satoshi';
+    src: url('/fonts/satoshi/Satoshi-Light.woff2') format('woff2'),
+    url('/fonts/satoshi/Satoshi-Light.woff') format('woff'),
+    url('/fonts/satoshi/Satoshi-Light.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/satoshi/Satoshi-Regular.woff2') format('woff2'),
+    url('/fonts/satoshi/Satoshi-Regular.woff') format('woff'),
+    url('/fonts/satoshi/Satoshi-Regular.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/satoshi/Satoshi-Medium.woff2') format('woff2'),
+    url('/fonts/satoshi/Satoshi-Medium.woff') format('woff'),
+    url('/fonts/satoshi/Satoshi-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/satoshi/Satoshi-Bold.woff2') format('woff2'),
+    url('/fonts/satoshi/Satoshi-Bold.woff') format('woff'),
+    url('/fonts/satoshi/Satoshi-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+:root {
+    --ff-title: 'New York';
+    --ff-body: 'Satoshi';
 }
