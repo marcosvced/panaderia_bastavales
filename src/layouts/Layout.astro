@@ -11,6 +11,7 @@ const {title} = Astro.props;
 <script>
     import Lenis from 'lenis'
 
+    // @ts-ignore
     window['lenis'] = new Lenis({
         lerp: 0.04
     })
@@ -37,7 +38,8 @@ const {title} = Astro.props;
         observer.observe(section);
     });
 
-    function raf(time) {
+    function raf(time:number) {
+        // @ts-ignore
         window['lenis'].raf(time)
         requestAnimationFrame(raf)
     }
