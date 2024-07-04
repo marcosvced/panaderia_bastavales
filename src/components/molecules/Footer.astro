@@ -1,6 +1,37 @@
 ---
-
+import Logo from "../atoms/logo.astro";
 ---
 <footer>
-
+    <div class="footer__rights">
+        <Logo/>
+        <span class="-m-t(4)">©2024 Panadería Bastavales<br/> All rights reserved.</span>
+    </div>
 </footer>
+<style>
+    footer {
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: theme('colors.opacity-500');
+
+        display: flex;
+        align-items: center;
+
+        @apply
+        -p-block(8)
+        -screen(lg):p-block(8)
+        -p-inline(4)
+        -screen(xs):p-inline(6)
+        -screen(md):p-inline(8)
+        -screen(lg):p-inline(10)
+        -screen(xxl):p-inline(18);
+    }
+
+    .footer__rights {
+        font-family: var(--ff-body), sans-serif;
+        line-height: 1.25;
+    }
+
+    span {
+        display: block;
+    }
+</style>
