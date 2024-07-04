@@ -1,21 +1,60 @@
 ---
 import Logo from "../atoms/logo.astro";
 ---
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            window['lenis'].scrollTo(this.getAttribute('href'))
+        });
+    });
+</script>
 <footer>
-    <div class="footer__rights">
-        <Logo/>
-        <span class="-m-t(4)">©2024 Panadería Bastavales<br/> All rights reserved.</span>
+    <div class="footer__container">
+        <div class="footer__rights">
+            <Logo/>
+            <span class="-m-t(4)">©2024 Panadería Bastavales<br/> All rights reserved.</span>
+        </div>
+        <div class="footer__sitemap">
+            <div class="sitemap__group">
+                <a href="#o-noso-segredo"> O noso segredo</a>
+                <a href="#os-nosos-productos"> O nosos productos</a>
+                <a href="#forno-de-lena"> Elavorado en forno de leña</a>
+                <a href="#calidades">De primeira calidade</a>
+            </div>
+            <div class="sitemap__group">
+                <a href="#calidades">De primeira calidade</a>
+                <a href="#os-nosos-clientes">Que opinan os nosos clientes?</a>
+                <a href="#contacto">Contáctanos</a>
+            </div>
+        </div>
+        <div class="footer__address">
+            <div class="contact__address-phone ">
+                <h3 class="contact__title -m-t(0) -m-b(2)">
+                    Localizanos en:
+                </h3>
+                <p class="-m-b(2)">
+                    Aldea Sabaxáns, 41, 15280 Sabaxans, A Coruña
+                </p>
+
+                <h3 class="contact__title -m-t(0) -m-b(2)">
+                    Deixanos unha mensaxe ou chámenenos a:
+                </h3>
+                <p>Tel.: 622 - 02 - 44 - 33</p>
+            </div>
+        </div>
     </div>
+    <p class="marcosvced">Feito con ❤️ e sentidoño por <a href="https://github.com/marcosvced/panaderia_bastavales"
+                                                          target="_blank">marcosvced</a>
+    </p>
 </footer>
 <style>
     footer {
         border-top-width: 1px;
         border-top-style: solid;
         border-top-color: theme('colors.opacity-500');
-
-        display: flex;
-        align-items: center;
-
+        font-family: var(--ff-body), sans-serif;
+        line-height: 1.25;
         @apply
         -p-block(8)
         -screen(lg):p-block(8)
@@ -24,14 +63,53 @@ import Logo from "../atoms/logo.astro";
         -screen(md):p-inline(8)
         -screen(lg):p-inline(10)
         -screen(xxl):p-inline(18);
+
+
     }
 
-    .footer__rights {
-        font-family: var(--ff-body), sans-serif;
-        line-height: 1.25;
+    .footer__container {
+        display: flex;
+        align-items: center;
+
+
+        justify-content: space-between;
+    }
+
+    .footer__sitemap {
+        display: flex;
+    }
+
+    .sitemap__group:first-of-type {
+        @apply -m-r(12);
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:not(:last-of-type) {
+        @apply -m-b(2);
     }
 
     span {
         display: block;
+    }
+
+    p, a, span {
+        opacity: .45;
+    }
+
+    .marcosvced {
+        @apply -p-t(22);
+        width: 100%;
+        text-align: center;
+    }
+
+    .marcosvced > * {
+        display: inline-flex;
+        color: theme('colors.light-080');
+        opacity: 1;
     }
 </style>
