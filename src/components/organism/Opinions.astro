@@ -1,0 +1,122 @@
+---
+import {Image} from 'astro:assets'
+
+import img1 from '@assets/img/xelavazquez.png'
+import img2 from '@assets/img/manuelcastro.png'
+import img3 from '@assets/img/sofiamendez.png'
+
+const opinions: { img: {}, name: string, stars: boolean[], text: string[] }[] = [
+    {
+        img: img1,
+        name: 'Xela Vazquez',
+        stars: [true, true, true, true, true],
+        text: [
+            'Uno de los mejores panes del mundo, hecho en horno de leña, con una miga y corteza muy especiales.',
+            'Atención muy cercana y amable, siempre tienen un detalle con el cliente.',
+            'Lo recomiendo al 100%'
+        ]
+    },
+    {
+        img: img2,
+        name: 'Manuel Castro',
+        stars: [true, true, true, true, false],
+        text: [
+            'Producto digno de ser llamado pan. Gran parte de la gente parece haber olvidado que es un producto con textura y sabor. No una pasta de horneado rápido que se pone como una piedra poco después de ser comprada, o aún peor, blando y gomoso. Esta panadería ofrece pan de verdad, con sabor, que dura días bueno y que seguramente nutricionalmente tiene algo más que aire.'
+        ]
+    },
+    {
+        img: img3,
+        name: 'Sofia Méndez',
+        stars: [true, true, true, true, true],
+        text: [
+            'Gracias por llamarme para saber que problema había tenido en la última compra que había hecho.',
+            'Se ve que se preocupan por tener contentos a los clientes.'
+        ]
+    },
+]
+---
+
+<section class="o-opinions grid -columns(24)" id="os-nosos-clientes">
+    <h2 class="-m-t(0) -m-b(8)">
+        Que din de nos?
+    </h2>
+
+    <div class="container__wrapper grid -columns(24)">
+        {opinions.map((opinion) => (
+                <div class="opinions__opinion -column-span(8)">
+                    <Image
+                            src={opinion.img}
+                            alt={opinion.name}
+                            format={'webp'}
+                            decoding="async"
+                            loading="lazy"
+                            class='profile__img'
+                    />
+                    {opinion.stars.map((star) => (
+                            <i class={`i-custom:star icon ${star ? '-filled' : ''}`}/>
+                    ))}
+                    <p class="opinion__name">{opinion.name}</p>
+                    {opinion.text.map((text) => (
+                            <p>{text}</p>
+                    ))}
+                </div>
+        ))}
+    </div>
+</section>
+<style>
+    h2 {
+        @apply
+        -column-start(3)
+        -column-end(23);
+        font-family: var(--ff-title), sans-serif;
+        font-size: 64px;
+        font-weight: normal;
+    }
+
+    .container__wrapper {
+        @apply
+        -column-start(3)
+        -column-end(23);
+        align-items: stretch;
+    }
+
+    h3 {
+        font-family: var(--ff-body), serif;
+        font-weight: normal;
+        color: theme('colors.primary');
+    }
+
+    p {
+        display: block;
+        font-family: var(--ff-body), serif;
+    }
+
+
+    .opinions__opinion {
+        @apply -p-y(8) -p-x(8);
+        border: 1px solid theme('colors.primary');
+    }
+
+    .icon {
+        color: theme('colors.opacity-500');
+    }
+
+    .icon.-filled {
+        color: theme('colors.light-080');
+    }
+
+    .opinion__name {
+        font-family: var(--ff-body), serif;
+        color: theme('colors.primary');
+        font-weight: bolder;
+    }
+
+    .profile__img {
+        width: 48px;
+        height: 48px;
+        margin-left: auto;
+        margin-right: 0;
+        display: block;
+        border-radius: 50%;
+    }
+</style>
