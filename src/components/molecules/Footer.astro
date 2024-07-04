@@ -3,9 +3,10 @@ import Logo from "../atoms/logo.astro";
 ---
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            window['lenis'].scrollTo(this.getAttribute('href'))
+        anchor.addEventListener('click',  (e) => {
+            e.preventDefault()
+            // @ts-ignore
+            window['lenis'].scrollTo(anchor.getAttribute('href'))
         });
     });
 </script>
