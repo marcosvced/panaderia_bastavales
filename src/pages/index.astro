@@ -16,7 +16,7 @@ import Footer from "../components/molecules/Footer.astro";
         <About/>
         <Products/>
         <Oven/>
-        <Features />
+        <Features/>
         <Opinions/>
         <Contact/>
         <Footer/>
@@ -25,6 +25,9 @@ import Footer from "../components/molecules/Footer.astro";
 
 <style>
     main > :global(*:not(:last-child)) {
-        @apply -m-b(55);
+        @apply -m-b(22);
+        @screen md {
+            @apply -m-b(55);
+        }
     }
 </style>
