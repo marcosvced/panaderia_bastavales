@@ -26,21 +26,21 @@ import oven3 from '@assets/img/oven3.png'
         },
     });
 </script>
-<section class="o-oven -grid -columns(24)" id="forno-de-lena">
-    <h2 class="-m-t(0) -m-b(8)">
+<section class="o-oven -container" id="forno-de-lena">
+    <h2 class="o-oven__container">
         Pan artesan en forno de leña
     </h2>
-    <p class="-m-t(0) -m-b(8)">
+    <p>
         Na nosa panadería, fundada en 1820, seguimos honrando a tradición e a arte de facer pan como o facían os
         nosos antepasados. Cada peza de pan é elaborada a man e cocida no noso forno de leña, conferíndolle ese
         sabor inigualable e auténtico que só pode lograrse co método tradicional.
     </p>
-    <p class="-m-t(0) -m-b(8)">
+    <p>
         A maxia do noso forno de leña reside na súa capacidade para acadar temperaturas elevadas e constantes,
         permitindo que cada pan obteña unha codia crocante e un interior suave e esponxoso. Este proceso non só preserva
         as calidades gustativas do pan, senón que tamén mantén todas as substancias nutritivas esenciais.
     </p>
-    <div class="-column-start(3) -column-end(23)">
+    <div class="o-oven__container">
         <div class="oven-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -76,23 +76,34 @@ import oven3 from '@assets/img/oven3.png'
             </div>
             <div class="oven-swiper-pagination"></div>
         </div>
-
     </div>
 
 
 </section>
 <style>
-    h2 {
+    .o-oven__container {
         @apply
-        -column-start(3)
-        -column-end(23);
+        -column-start(1)
+        -column-end(5)
+        -screen(md):column-start(3)
+        -screen(md):column-end(23);
+    }
 
-        font-family: var(--ff-title), sans-serif;
-        font-size: 64px;
+    h2,
+    p {
+        @apply
+        -m-t(0) -m-b(8)
+        -column-start(1)
+        -column-end(5);
+    }
+
+    h2 {
+        font-family: var(--ff-title);
+        font-size: var(--fs-huge);
         font-weight: normal;
     }
 
-    .o-over :global(img) {
+    .o-oven :global(img) {
         width: 100%;
         height: auto;
         display: block;
@@ -101,21 +112,26 @@ import oven3 from '@assets/img/oven3.png'
         margin-bottom: 24px;
     }
 
+
     p:first-of-type {
-        @apply
-        -column-start(3)
-        -column-end(12);
+        @screen md {
+            @apply
+            -column-start(3)
+            -column-end(12);
+        }
     }
 
     p:last-of-type {
-        @apply
-        -column-start(13)
-        -column-end(23);
+        @screen md {
+            @apply
+            -column-start(13)
+            -column-end(23);
+        }
     }
 
     p {
-        font-family: Inter;
-        font-size: 18px;
+        font-family: var(--ff-body);
+        font-size: var(--fs-medium);
         line-height: 1.5;
         font-weight: 200;
         opacity: .65;
@@ -125,26 +141,16 @@ import oven3 from '@assets/img/oven3.png'
         overflow: hidden;
     }
 
-    img {
-        width: 100%;
-        max-height: 696px;
-        object-fit: cover;
-        display: block;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        user-select: none;
-        margin-bottom: 40px;
-    }
 
     .oven-swiper-pagination.swiper-pagination-bullets {
         bottom: 0;
         left: 0;
         position: static;
-        width: auto;
         flex-grow: 1;
         display: flex;
-        gap: 24px;
         align-items: center;
         justify-content: center;
+        @apply -gap(6) -width(auto);
     }
 
     .oven-swiper-pagination.swiper-pagination-bullets :global(.swiper-pagination-bullet) {

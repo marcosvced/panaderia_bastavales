@@ -5,13 +5,14 @@ import img1 from '@assets/img/img1.png'
 import img2 from '@assets/img/img2.png'
 import img3 from '@assets/img/img3.png'
 ---
-<section class="o-about grid" id="o-noso-segredo">
+<section class="o-about -container" id="o-noso-segredo">
     <div class="container__description">
         <h2 class="-m-t(0) -m-b(8)">
             O segredo <br/>dun sabor único
         </h2>
         <p class="-m-t(0) -m-b(4)">
-            O noso pan non é só un produto, é o resultado dunha traxectoria de séculos, onde cada bocado conta a historia
+            O noso pan non é só un produto, é o resultado dunha traxectoria de séculos, onde cada bocado conta a
+            historia
             da nosa paixón polo sabor auténtico.
             <br/>
             Elaborado con dedicación en noso <b>forno de leña</b>, utilizando os mellores ingredientes, seleccionados
@@ -54,21 +55,26 @@ import img3 from '@assets/img/img3.png'
     .o-about {
         align-items: center;
     }
+
     .container__description {
-        @apply
-        -column-start(3)
-        -column-end(12);
+        @apply  -column-start(1) -column-end(5);
+
+        @screen md {
+            @apply
+            -column-start(3)
+            -column-end(12);
+        }
     }
 
     h2 {
-        font-size: 64px;
-        font-family: var(--ff-title),serif;
+        font-size: var(--fs-huge);
+        font-family: var(--ff-title), serif;
         font-weight: normal;
     }
 
     p {
         font-family: var(--ff-body), sans-serif;
-        font-size: 18px;
+        font-size: var(--fs-medium);
         line-height: 1.5;
         font-weight: 200;
         opacity: .65;
@@ -77,14 +83,22 @@ import img3 from '@assets/img/img3.png'
 
     .container__pictures {
         @apply
-        -column-start(13)
-        -column-end(23)
+        -column-start(1)
+        -column-end(5)
         -grid
         -columns(4)
-        -gap(8);
+        -gap(4);
+
+        @screen md {
+            @apply
+            -column-start(13)
+            -column-end(23)
+            -gap(8);
+        }
+
     }
 
-    .about__img  {
+    .about__img {
         width: 100%;
         height: 100%;
         display: block;

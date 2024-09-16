@@ -3,7 +3,7 @@ import Logo from "../atoms/logo.astro";
 ---
 <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click',  (e) => {
+        anchor.addEventListener('click', (e) => {
             e.preventDefault()
             // @ts-ignore
             window['lenis'].scrollTo(anchor.getAttribute('href'))
@@ -41,12 +41,16 @@ import Logo from "../atoms/logo.astro";
                 <h3 class="contact__title -m-t(0) -m-b(2)">
                     Deixanos unha mensaxe ou chámenenos a:
                 </h3>
-                <p>Tel.: 622 - 02 - 44 - 33</p>
+                <p>
+                    Tel.: 622 - 02 - 44 - 33<br/>
+                    Tel.: 981 - 88 - 86 - 24
+                </p>
             </div>
         </div>
     </div>
-    <p class="marcosvced">Feito con ❤️ e sentidoño por <a href="https://github.com/marcosvced/panaderia_bastavales"
-                                                          target="_blank">marcosvced</a>
+    <p class="marcosvced">
+        Feito con ❤️ e sentidiño por
+        <a href="https://github.com/marcosvced/panaderia_bastavales" target="_blank">marcosvced</a>
     </p>
 </footer>
 <style>
@@ -65,7 +69,6 @@ import Logo from "../atoms/logo.astro";
         -screen(lg):p-inline(10)
         -screen(xxl):p-inline(18);
 
-
     }
 
     .footer__container {
@@ -77,7 +80,11 @@ import Logo from "../atoms/logo.astro";
     }
 
     .footer__sitemap {
+        display: none;
+        @screen md {
+
         display: flex;
+        }
     }
 
     .sitemap__group:first-of-type {

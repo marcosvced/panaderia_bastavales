@@ -31,7 +31,7 @@ const onClick = () => {
 button {
   background: none;
   border: none;
-  font-family: Inter;
+  font-family: var(--ff-body);
   font-weight: 200;
   text-transform: uppercase;
   position: relative;

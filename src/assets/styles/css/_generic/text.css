@@ -1,0 +1,31 @@
+.-ff-title {
+    font-family: var(--ff-title), serif;
+}
+
+.-ff-body {
+    font-family: var(--ff-body), sans-serif;
+}
+
+.-fs-huge {
+    font-size: var(--fs-huge);
+}
+
+.-fs-x-large {
+    font-size: var(--fs-x-large);
+}
+
+.-fs-large {
+    font-size: var(--fs-large);
+}
+
+.-fs-medium {
+    font-size: var(--fs-medium);
+}
+
+.-fs-small {
+    font-size: var(--fs-small);
+}
+
+.-fs-x-small {
+    font-size: var(--fs-x-small);
+}

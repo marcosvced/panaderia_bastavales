@@ -11,8 +11,8 @@
     new Swiper('.swiper', {
         // configure Swiper to use modules
         modules: [Navigation, Pagination],
-        slidesPerView: 6,
-        spaceBetween: 24,
+        slidesPerView: 1,
+        spaceBetween: 12,
         speed: 500,
         navigation: {
             nextEl: ".swiper-button-next",
@@ -21,6 +21,20 @@
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+            },
+            1024: {
+                slidesPerView: 6,
+                spaceBetween: 24
+            },
         },
     });
 </script>
@@ -69,8 +83,7 @@
 
     .wrapper {
         display: flex;
-        margin-top: 24px;
-        gap: 48px;
+        @apply -m-t(6) -gap(12);
     }
 
     .swiper-pagination.swiper-pagination-bullets {
@@ -89,8 +102,7 @@
 
     .navigation-group {
         display: flex;
-        gap: 16px;
-        height: 48px;
+        @apply -gap(4);
     }
 
     .navigation-group > * {

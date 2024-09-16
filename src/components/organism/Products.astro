@@ -37,9 +37,9 @@ const products = [
 ]
 
 ---
-<section class="o-products -grid -columns(24) " id="os-nosos-productos">
+<section class="o-products -container" id="os-nosos-productos">
     <!-- Slider main container -->
-    <div class=" -column-start(3) -column-end(23)">
+    <div class=" -column-start(1) -column-end(5) -screen(md):column-start(3) -screen(md):column-end(23)">
         <h2  class="-m-t(0) -m-b(8)">Tradición e sabor</h2>
         <p class="-m-t(0) -m-b(16)">Productos artesans elavorados co mellor da nosa terra.</p>
         <Slider >
@@ -65,14 +65,14 @@ const products = [
 </section>
 <style>
     h2 {
-        font-size: 64px;
-        font-family: 'New York';
+        font-size: var(--fs-huge);
+        font-family: var(--ff-title);
         font-weight: normal;
     }
 
     p {
-        font-family: Inter;
-        font-size: 18px;
+        font-family: var(--ff-body);
+        font-size: var(--fs-medium);
         line-height: 1.5;
         font-weight: 200;
         opacity: .65;
@@ -86,18 +86,18 @@ const products = [
     }
 
     .o-products :global(h3) {
-        font-family: 'New York';
-        font-size: 24px;
+        font-family: var(--ff-title);
+        font-size: var(--fs-large);
         font-weight: normal;
-        margin: 0 0 8px;
+        @apply: -m-t(0) -m-b(2);
     }
 
     .o-products :global(h3 + p) {
-        font-family: Inter;
-        font-size: 14px;
+        font-family: var(--ff-body);
+        font-size: var(--fs-x-small);
         line-height: 1.5;
         font-weight: 200;
         opacity: .65;
-        margin: 0;
+        @apply: -m-x(0) -m-y(0);
     }
 </style>

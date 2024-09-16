@@ -2,19 +2,19 @@
 import {Image} from 'astro:assets'
 import img1 from '@assets/img/contact.png'
 ---
-<section class="o-contact grid -columns(24)" id="contacto">
-    <h2 class="-m-t(0) -m-b(8)">
+<section class="o-contact -container" id="contacto">
+    <h2 class="-fill-container -m-t(0) -m-b(8)">
         Ponte en contacto con nos
     </h2>
-    <div class="container__wrapper grid -columns(24)">
+    <div class="container__wrapper -fill-container -grid -gap(4) -screen(md):gap(24) -columns(1) -screen(md):columns(3) -p-x(0) -p-y(0)">
         <Image src={img1}
                alt="A bird sitting on a nest of eggs."
                format={'webp'}
                decoding="async"
                loading="lazy"
-               class='about__img -column-start(1) -column-span(8) -width(100%)'
+               class='about__img -column-start(1) -column-span(1) -width(100%)'
         />
-        <div class="contact -m-b(20) -column-start(10) -column-span(15)">
+        <div class="contact -m-b(20) -screen(md):column-start(2) -screen(md):column-end(4) ">
             <div class="contact__address-phone -m-b(20)">
                 <h3 class="contact__title -m-t(0) -m-b(4)">
                     Localizanos en:
@@ -28,8 +28,6 @@ import img1 from '@assets/img/contact.png'
                 </h3>
                 <p>Tel.: 622 - 02 - 44 - 33</p>
             </div>
-
-
             <div class="contact__opening-hours">
                 <h3 class="opening-hours__title -m-t(0) -m-b(4)">Horario</h3>
                 <p class="-m-y(0)">Luns - Venres: <strong>09:30 - 15:00</strong></p>
@@ -40,27 +38,25 @@ import img1 from '@assets/img/contact.png'
 </section>
 <style>
     h2 {
-        @apply
-        -column-start(3)
-        -column-end(23);
         font-family: var(--ff-title), sans-serif;
-        font-size: 64px;
+        font-size: var(--fs-huge);
         font-weight: normal;
     }
 
     .container__wrapper {
-        @apply
-        -column-start(3)
-        -column-end(23);
         align-items: center;
     }
 
     .container__wrapper :global(img) {
         width: 100%;
         height: auto;
-        display: block;
         border: 0;
         user-select: none;
+        display: none;
+
+        @screen md {
+            display: block;
+        }
     }
 
     h3 {

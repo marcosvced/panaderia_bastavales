@@ -6,26 +6,26 @@ const features: { highlight: string, title: string, description: string }[] = [
         description: 'So usamos ingredientes naturais, sen lévedos industriais nen aditivos artificiais.'
     },
     {
-        highlight:'Grao',
-        title:'integral',
-        description:'O grao integral otorga un sabor inconfundible e un aroma ó auténtico pan tradicional.'
+        highlight: 'Grao',
+        title: 'integral',
+        description: 'O grao integral otorga un sabor inconfundible e un aroma ó auténtico pan tradicional.'
     },
     {
-        highlight:'Sabor',
-        title:'inconfundible',
-        description:'O noso pan posee un sabor inconfundible, gracias os ingredientes e elavoración artesan.'
+        highlight: 'Sabor',
+        title: 'inconfundible',
+        description: 'O noso pan posee un sabor inconfundible, gracias os ingredientes e elavoración artesan.'
     },
     {
-        highlight:'Conservación',
-        title:'prolongada',
-        description:'Grazas a estar elavorado con masa nai, o noso pan mantense fresco por varios días.'
+        highlight: 'Conservación',
+        title: 'prolongada',
+        description: 'Grazas a estar elavorado con masa nai, o noso pan mantense fresco por varios días.'
     }
 ]
 ---
-<section class="o-features -grid -columns(24)" id="calidades">
-    <div class="features__container -column-start(4) -column-end(22) -gap(24)">
-        {features.map(({highlight,title,description})=>(
-                <div class="feature">
+<section class="o-features -container" id="calidades">
+    <div class="features__container ">
+        {features.map(({highlight, title, description}) => (
+                <div class="feature -column-span(2)">
                     <h2>
                         <span>{highlight}</span>
                         {title}
@@ -38,14 +38,24 @@ const features: { highlight: string, title: string, description: string }[] = [
 
 <style>
     .features__container {
-        display: flex;
+        @apply
+        -grid
+        -columns(2)
+        -screen(sm):columns(4)
+        -screen(md):columns(8)
+        -gap(4)
+        -screen(md):gap(24)
+        -column-start(1)
+        -screen(md):column-start(4)
+        -column-end(5)
+        -screen(md):column-end(22);
         align-items: stretch;
         justify-content: space-between;
     }
 
     h2 {
         font-family: var(--ff-title), sans-serif;
-        font-size: 32px;
+        font-size: var(--fs-x-large);
         font-weight: normal;
         display: flex;
         flex-direction: column;
@@ -54,17 +64,16 @@ const features: { highlight: string, title: string, description: string }[] = [
     }
 
     h2 > span {
-        color: #C39D6D;
+        color: theme('colors.primary');
     }
 
     p {
-        font-family: Inter;
-        font-size: 16px;
+        font-family: var(--ff-body);
+        font-size: var(--fs-small);
         line-height: 1.5;
         font-weight: 200;
         opacity: .65;
         text-align: center;
-        //width: 50%;
         margin: auto;
     }
 </style>

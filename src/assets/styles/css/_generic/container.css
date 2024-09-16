@@ -1,5 +1,9 @@
-.container {
+.-container {
     @apply
+    -grid
+    -gap(4)
+    -columns(4)
+    -screen(md):columns(24)
     -m-x(auto)
     -p-x(4)
     -screen(xs):p-x(6)
@@ -7,10 +11,10 @@
     -screen(lg):p-x(10)
     -screen(xxl):p-x(18);
 }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    gap: 1rem
+.-fill-container {
+    @apply
+    -column-start(1)
+    -column-end(5)
+    -screen(md):column-start(3)
+    -screen(md):column-end(23);
 }
-

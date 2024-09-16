@@ -53,4 +53,12 @@
 :root {
     --ff-title: 'New York';
     --ff-body: 'Satoshi';
+
+    --fs-huge: clamp(40px, 2vw + 1rem, 64px);
+    --fs-x-large: clamp(28px, 2vw + 1rem, 32px);
+    --fs-large: clamp(1rem, 2vw + 1rem, 24px);
+    --fs-medium: clamp(14px, 2vw + 1rem, 18px);
+    --fs-small: clamp(12px, 2vw + 1rem, 1rem);
+    --fs-x-small: clamp(10px, 2vw + 1rem, 14px);
+
 }

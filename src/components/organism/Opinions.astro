@@ -36,14 +36,14 @@ const opinions: { img: any, name: string, stars: boolean[], text: string[] }[] =
 ]
 ---
 
-<section class="o-opinions grid -columns(24)" id="os-nosos-clientes">
-    <h2 class="-m-t(0) -m-b(8)">
+<section class="o-opinions -container" id="os-nosos-clientes">
+    <h2 class="-fill-container -m-t(0) -m-b(8)">
         Que din de nos?
     </h2>
 
-    <div class="container__wrapper grid -columns(24)">
+    <div class="container__wrapper -fill-container">
         {opinions.map((opinion) => (
-                <div class="opinions__opinion -column-span(8)">
+                <div class="opinions__opinion">
                     <Image
                             src={opinion.img}
                             alt={opinion.name}
@@ -65,18 +65,18 @@ const opinions: { img: any, name: string, stars: boolean[], text: string[] }[] =
 </section>
 <style>
     h2 {
-        @apply
-        -column-start(3)
-        -column-end(23);
+
         font-family: var(--ff-title), sans-serif;
-        font-size: 64px;
+        font-size: var(--fs-huge);
         font-weight: normal;
     }
 
     .container__wrapper {
         @apply
-        -column-start(3)
-        -column-end(23);
+        -grid
+        -columns(1)
+        -screen(md):columns(3)
+        -gap(6);
         align-items: stretch;
     }
 

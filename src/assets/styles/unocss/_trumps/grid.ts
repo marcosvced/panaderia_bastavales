@@ -59,7 +59,6 @@ export const grid = [
     ],
 
     // Rows
-
     [
         new RegExp(`^(?:-)?row-gap\\((\\d+)\\)$`),
         ([, n]: [never, number]) => {
@@ -99,5 +98,4 @@ export const grid = [
             return {'grid-row-end': `span ${n}`}
         }
     ],
-    
 ]
