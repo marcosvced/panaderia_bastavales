@@ -1,5 +1,6 @@
 ---
-import { Image } from 'astro:assets'
+import {Image} from 'astro:assets'
+import Picture from "../atoms/Picture.astro";
 
 // export type ProductType = { img: any, price: string, title: string, description: string }
 interface Props {
@@ -10,23 +11,15 @@ const {product: {img, title, price, description}} = Astro.props;
 ---
 <div class="m-product">
     <span class="price">{price}€ <i class="i-custom:shop icon"/></span>
-    <Image
-            src={img}
-            alt="A bird sitting on a nest of eggs."
-            format={'webp'}
-            decoding="async"
-            loading="lazy"
-            class='about__img'
-            width="220"
-            height="294"
-    />
+    <Picture src={img} alt={title} conf={{quality: 50, width: 220, height: 294}} className="about__img"/>
+
     <div class="info">
         <h3>{title}</h3>
         <p>{description}</p>
     </div>
 </div>
 <style>
-     img {
+    :global(.about__img) {
         width: 100%;
         height: auto;
         display: block;

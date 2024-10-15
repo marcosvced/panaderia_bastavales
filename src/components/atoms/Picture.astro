@@ -1,0 +1,28 @@
+---
+import {CldImage} from 'astro-cloudinary';
+type Conf = {
+    width?: number;
+    height?: number;
+    quality?: number;
+}
+interface Props {
+    src: string;
+    alt: string;
+    className?: string;
+    conf?: Conf
+}
+const {src, alt, className, conf = {} as Conf} = Astro.props
+---
+<picture class={className}>
+    <CldImage src={src} alt={alt} format="webp" quality={conf.quality} width={conf.width} height={conf.height}/>
+</picture>
+<style>
+    img {
+        display: block;
+        object-fit: cover;
+
+        @apply
+        -width(100%)
+        -height(100%);
+    }
+</style>

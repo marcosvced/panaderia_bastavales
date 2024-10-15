@@ -4,6 +4,7 @@ import Button from '@/components/atoms/Button.vue'
 import img1 from '@assets/img/img1.png'
 import img2 from '@assets/img/img2.png'
 import img3 from '@assets/img/img3.png'
+import Picture from "../atoms/Picture.astro";
 ---
 <section class="o-about -container" id="o-noso-segredo">
     <div class="container__description">
@@ -27,27 +28,9 @@ import img3 from '@assets/img/img3.png'
     </div>
 
     <div class="container__pictures">
-        <Image src={img1}
-               alt="A bird sitting on a nest of eggs."
-               format={'webp'}
-               decoding="async"
-               loading="lazy"
-               class='about__img -column-start(1) -column-end(3)'
-        />
-        <Image src={img2}
-               alt="A bird sitting on a nest of eggs."
-               format={'webp'}
-               decoding="async"
-               loading="lazy"
-               class='about__img -column-start(1) -column-end(3)'
-        />
-        <Image src={img3}
-               alt="A bird sitting on a nest of eggs."
-               format={'webp'}
-               decoding="async"
-               loading="lazy"
-               class='about__img -column-start(3) -column-end(5) -row-start(1) -row-span(2)'
-        />
+        <Picture src="hjcg4crli2k85nhpped7" className='about__img -column-start(1) -column-end(3)' alt=""/>
+        <Picture src="siiqi2hmx6vdlgqye7ad" className='about__img -column-start(1) -column-end(3)' alt=""/>
+        <Picture src="watyt3or4gt3ked0i0vi" className='about__img -column-start(3) -column-end(5) -row-start(1) -row-span(2)' alt=""/>
     </div>
 
 </section>
@@ -57,7 +40,7 @@ import img3 from '@assets/img/img3.png'
     }
 
     .container__description {
-        @apply  -column-start(1) -column-end(5);
+        @apply -column-start(1) -column-end(5);
 
         @screen md {
             @apply
@@ -98,7 +81,7 @@ import img3 from '@assets/img/img3.png'
 
     }
 
-    .about__img {
+    :global(.about__img) {
         width: 100%;
         height: 100%;
         display: block;

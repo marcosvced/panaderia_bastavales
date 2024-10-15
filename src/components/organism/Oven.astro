@@ -4,28 +4,12 @@ import Slider from "../molecules/Slider.astro";
 import oven1 from '@assets/img/oven1.png'
 import oven2 from '@assets/img/oven2.png'
 import oven3 from '@assets/img/oven3.png'
+import Picture from "../atoms/Picture.astro";
+
+const pictures = ['jykvgjwrg4umxprui7li', 'tcmdmawff0rl1qw9onkn', 'azu9gsxcwwihrbxtbtww']
 ---
 
-<script>
-    import Swiper from 'swiper';
-    import {Navigation, Pagination} from 'swiper/modules';
-    import 'swiper/css';
-    import 'swiper/css/navigation';
-    import 'swiper/css/pagination';
 
-    // init Swiper:
-    new Swiper('.oven-swiper', {
-        // configure Swiper to use modules
-        modules: [Navigation, Pagination],
-        slidesPerView: 1,
-        spaceBetween: 24,
-        loop: true,
-        pagination: {
-            el: ".oven-swiper-pagination",
-            clickable: true,
-        },
-    });
-</script>
 <section class="o-oven -container" id="forno-de-lena">
     <h2 class="o-oven__container">
         Pan artesan en forno de leña
@@ -43,36 +27,11 @@ import oven3 from '@assets/img/oven3.png'
     <div class="o-oven__container">
         <div class="oven-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <Image
-                            src={oven1}
-                            alt="A bird sitting on a nest of eggs."
-                            format={'webp'}
-                            decoding="async"
-                            loading="lazy"
-                            class='about__img'
-                    />
-                </div>
-                <div class="swiper-slide">
-                    <Image
-                            src={oven2}
-                            alt="A bird sitting on a nest of eggs."
-                            format={'webp'}
-                            decoding="async"
-                            loading="lazy"
-                            class='about__img'
-                    />
-                </div>
-                <div class="swiper-slide">
-                    <Image
-                            src={oven3}
-                            alt="A bird sitting on a nest of eggs."
-                            format={'webp'}
-                            decoding="async"
-                            loading="lazy"
-                            class='about__img'
-                    />
-                </div>
+                {pictures.map((picture) => (
+                        <div class="swiper-slide">
+                            <Picture src={picture} alt="" className="about__img" conf={{quality: 70}}/>
+                        </div>
+                ))}
             </div>
             <div class="oven-swiper-pagination"></div>
         </div>
@@ -161,3 +120,24 @@ import oven3 from '@assets/img/oven3.png'
         margin: 0 !important;
     }
 </style>
+
+<script>
+    import Swiper from 'swiper';
+    import {Navigation, Pagination} from 'swiper/modules';
+    import 'swiper/css';
+    import 'swiper/css/navigation';
+    import 'swiper/css/pagination';
+
+    // init Swiper:
+    new Swiper('.oven-swiper', {
+        // configure Swiper to use modules
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        pagination: {
+            el: ".oven-swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
