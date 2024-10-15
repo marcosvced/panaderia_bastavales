@@ -14,9 +14,11 @@ interface Props {
 const {src, alt, className, conf = {} as Conf} = Astro.props
 ---
 <picture class={className}>
-    <CldImage src={src} alt={alt} format="webp" quality={conf.quality} width={conf.width} height={conf.height}/>
+    <CldImage src={src} alt={alt} format="webp" quality={conf.quality} width={conf.width} height={conf.height} sizes="100%"/>
 </picture>
 <style>
+    picture {
+    }
     img {
         display: block;
         object-fit: cover;

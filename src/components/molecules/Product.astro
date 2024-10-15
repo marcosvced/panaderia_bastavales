@@ -11,7 +11,7 @@ const {product: {img, title, price, description}} = Astro.props;
 ---
 <div class="m-product">
     <span class="price">{price}€ <i class="i-custom:shop icon"/></span>
-    <Picture src={img} alt={title} conf={{quality: 50, width: 220, height: 294}} className="about__img"/>
+    <Picture src={img} alt={title} conf={{quality: 50}} className="about__img"/>
 
     <div class="info">
         <h3>{title}</h3>
@@ -19,11 +19,10 @@ const {product: {img, title, price, description}} = Astro.props;
     </div>
 </div>
 <style>
-    :global(.about__img) {
+    .m-product :global(.about__img) {
         width: 100%;
         height: auto;
         display: block;
-        border: 1px solid rgba(255, 255, 255, 0.05);
         user-select: none;
         margin-bottom: 24px;
     }
