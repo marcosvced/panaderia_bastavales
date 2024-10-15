@@ -5,6 +5,7 @@ import {mediaQuery} from "./_tools/media";
 import {margins, paddings} from "./_trumps/spacing";
 import {width, height} from "./_trumps/size";
 import {grid} from "./_trumps/grid";
+import {border} from "./_trumps/border.ts";
 
 
 export default definePreset(() => {
@@ -22,6 +23,7 @@ export default definePreset(() => {
             paddings,
             width,
             height,
+            border,
             ...grid
         ]
     }

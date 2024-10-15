@@ -4,3 +4,55 @@
 @import "_generic/body.css" layer(generic);
 @import "_generic/icon.css" layer(generic);
 @import "_generic/container.css" layer(generic);
+
+
+    :root {
+        /* Background Colors */
+        --color-bg-default: #10100E;
+        --color-bg-surface: #2B2B28;
+        --color-bg-fill: #1A1A17;
+        --color-bg-hover: #1A1A17;
+        --color-bg-active: #0B0B09;
+
+        /* Primary Colors */
+        --color-primary-default: #C49D6E;
+        --color-primary-hover: #A87F58;
+        --color-primary-active: #9B7A54;
+        --color-primary-border: #9B7A54;
+        --color-primary-text: #C49D6E;
+        --color-primary-icon: #C49D6E;
+
+        /* Secondary Colors */
+        --color-secondary-default: #6E8C64;
+        --color-secondary-hover: #7B9870;
+        --color-secondary-active: #5A704F;
+        --color-secondary-border: #5A704F;
+        --color-secondary-text: #6E8C64;
+        --color-secondary-icon: #6E8C64;
+
+        /* Neutral (White) Colors */
+        --color-neutral-default: #FFFFE6;
+        --color-neutral-light: #FFFFF4;
+        --color-neutral-hover: #FFF7D6;
+        --color-neutral-border: #E6E6D1;
+        --color-neutral-text: #FFFFE6;
+        --color-neutral-icon: #FFFFE6;
+
+        /* Text Colors */
+        --color-text-default: #FFFFE6;
+        --color-text-secondary: #C49D6E;
+        --color-text-muted: #999999;
+        --color-text-error: #FF5A5A;
+
+        /* Icon Colors */
+        --color-icon-default: #FFFFE6;
+        --color-icon-secondary: #C49D6E;
+        --color-icon-muted: #999999;
+
+        /* Border Colors */
+        --color-border-default: #2B2B28;
+        --color-border-primary: #C49D6E;
+        --color-border-secondary: #6E8C64;
+        --color-border-muted: #4D4D4B;
+    }
+

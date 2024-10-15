@@ -1,61 +1,19 @@
 ---
-import Slider from "../molecules/Slider.astro";
+import { getCollection } from 'astro:content';
 
-import molete from '@assets/img/molete.png'
-import empanada from '@assets/img/empanada.png'
-import bola from '@assets/img/bola.png'
-import barra from '@assets/img/barra.png'
+import Slider from "../molecules/Slider.astro";
 import Product from "../molecules/Product.astro";
 
-
-
-const products = [
-    {
-        img: molete,
-        price: '2,70',
-        title: 'O noso molete',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
-    },
-    {
-        img: empanada,
-        price: '14,20',
-        title: 'Empanada de carner',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
-    },
-    {
-        img: barra,
-        price: '1,25',
-        title: 'Barra tradicional',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
-    },
-    {
-        img: bola,
-        price: '2,50',
-        title: 'A nosa bola',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, ad minima quasi ratione saepe vero vitae voluptatum.'
-    },
-]
+const products = await getCollection('products');
 
 ---
 <section class="o-products -container" id="os-nosos-productos">
     <!-- Slider main container -->
-    <div class=" -column-start(1) -column-end(5) -screen(md):column-start(3) -screen(md):column-end(23)">
+    <div class="-column-start(1) -column-end(5) -screen(md):column-start(3) -screen(md):column-end(23)">
         <h2  class="-m-t(0) -m-b(8)">Tradición e sabor</h2>
         <p class="-m-t(0) -m-b(16)">Productos artesans elavorados co mellor da nosa terra.</p>
         <Slider >
-            {products.map((product) => (
-                    <div class="swiper-slide">
-                        <Product product={product} />
-                    </div>
-            ))}
-
-            {products.map((product) => (
-                    <div class="swiper-slide">
-                        <Product product={product} />
-                    </div>
-            ))}
-
-            {products.map((product) => (
+            {products.map(({data:product}) => (
                     <div class="swiper-slide">
                         <Product product={product} />
                     </div>
@@ -78,6 +36,7 @@ const products = [
         opacity: .65;
     }
 
+    .o-products :global(.m-product),
     .o-products :global(.info) {
         height: 100%;
         display: flex;
